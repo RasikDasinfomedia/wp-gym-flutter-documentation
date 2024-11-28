@@ -51,13 +51,13 @@
                    <div class="logo">&nbsp;&nbsp; <img src="images/mojoomla_logo.png" id="img-logo" alt="mojoomla" style="margin-bottom:20px; height="80" width="230"> </div>
                   <ul id="top-menu">
                      <li><a href="#introduction">Introduction</a></li>
+		     <li><a href="#Api-section">API section</a></li>
                      <li><a href="#setting-up-android-project">setting up flutter Project</a></li>
                      <li><a href="#flutter-version">Flutter Version</a></li>
                      <li><a href="#change-application-name">Change Application Name</a></li>
                      <li><a href="#changing-package-name">Changing Package name</a></li>
                      <li><a href="#change-base-url">Change Base URL</a></li>
                      <li><a href="#Android-Customization">Flutter Customization</a></li>
-                     <li><a href="#firebase-notifications">Firebase Notifications</a></li>
                      <li><a href="#license_settings">License Registration Settings</a></li>
                      <li><a href="#sign-your-release-build">Create Release Build</a></li>
                      <li>
@@ -80,13 +80,14 @@
                </aside>
             </div>
           <div class="col-md-8">
+
    <section id="Introduction">
                   <div id="header" class="row">
                      <div class="col-md-3 logo"> <a href="index.html"><img src="images\wpgym.png"
                              id="img-logo" alt="logo"></a> </div>
                      <div class="col-md-8 col-md-offset-1 desc">
                     <h4 class="slight">WPGYM Mobile App<sub><small></small></sub></h4>
-                       <h5 class="slight"><small>Documented by Mojoomla - at <span id="current-date"></span></small></h5>
+                       <h5 class="slight"><small>Documented by Mojoomla - at November 27 2024</span></small></h5>
 <script>
     // JavaScript to dynamically set the current date
     const dateElement = document.getElementById('current-date');
@@ -101,9 +102,23 @@
                      <h3><strong>A) <u>Introduction</u> </strong></h3>
                      <p align="justify">The WP Gym Mobile App is an ideal solution for managing the complete gym operation. It supports various user roles, including Member,Trainer, and Accountant
                         <span style="color: blue;">                 </section>
+
+  <section id="Api-section">
+			<h3><strong>B). <u>API Section</u> </strong></h3>
+			<p>Before start using the application need to complete API setup, follow below steps to activate API from the WordPress backend
+					<ol>
+					<li>Copy API.zip file that you get with application</li>
+					<li>Put API folder at WordPress backend at 'wp-content\plugins\gym-management\' and extract it
+					</li>
+					<li>Add this line "require_once GMS_PLUGIN_DIR . '/api/gym-api-files.php';" at "wp-content\plugins\gym-management\gym-management.php""
+					</li>
+					<li>After following the above steps API will be activated</li>
+				</ol>
+		</section>
+
                   <section id="setting-up-android-project">
                      <hr class="vertical-space2">
-                     <h3><strong>B) <u>Setting up flutter project</u></strong></h3>
+                     <h3><strong>C) <u>Setting up flutter project</u></strong></h3>
                      <br>
                      <h5><strong>1. <u>Requirement</u></strong></h5>
                      <ol>
@@ -144,12 +159,12 @@
                      <br>
                   </section>
                   <section id="flutter-version">
-                     <h3><strong>C) <u>Flutter Version</u></strong></h3>
+                     <h3><strong>D) <u>Flutter Version</u></strong></h3>
                      <p>environment: </br>
                         sdk: '3.24.3' </p>
                   </section>
                   <section id="change-application-name">
-                     <h3><strong>D) <u>Change Application name</u></strong></h3>
+                     <h3><strong>E) <u>Change Application name</u></strong></h3>
                      <p>Change the application name To change the name of a Flutter app, you need to modify the
                         appropriate files and configurations. Here's a step-by-step guide to help you change the app
                         name:
@@ -214,7 +229,7 @@
                         updated. Remember to clean and rebuild your project to ensure the changes take effect.</p>
                   </section>
                   <section id="changing-package-name">
-                     <h3><strong>E) <u>Changing Package name</u></strong></h3>
+                     <h3><strong>F) <u>Changing Package name</u></strong></h3>
                      <p>To change the package name of a Flutter application, you need to update it in several places
                         within your project. Follow these steps to change the package name:</p>
                      <ol>
@@ -259,7 +274,7 @@
                         throughout the project. Make sure to update any dependencies or configurations that reference
                         the old package name as well.</p>
                      <section id="change-base-url">
-                        <h3><strong>F) <u>Change Base URL</u></strong></h3>
+                        <h3><strong>G) <u>Change Base URL</u></strong></h3>
                         <p><br>Change the URL, you need to modify the appropriate files and configurations. Here's a
                            step-by-step guide to help you change the URL:
                         </p>
@@ -282,7 +297,7 @@
                      </section>
                      <br>
                      <section id="Android-Customization">
-                        <h3><strong>G) <u>Flutter Customization</u></strong></h3>
+                        <h3><strong>H) <u>Flutter Customization</u></strong></h3>
 
                         <h5><strong>1.<u>Change Launcher icon</u></strong></h5>
                         <p>Change the launcher icon in
@@ -316,57 +331,7 @@
                      <code>It can take a few minutes for the emulator to start. You may have to unlock the screen. When you do, My First App appears on the emulator screen.</code>
                      </br>
                      <br>
-                     <section id="firebase-notifications">
-                        <h3><strong>H) <u>Firebase Notifications</u></strong></h3>
-                        <br>
-                        <h5><strong>1.<u>For Android</u></strong></h5>
-                        <li>In the Firebase console, go to your project.</li>
-                        <li>Click on the "Add app" button to add your Flutter app.</li>
-                        <li>Follow the instructions to register your app, providing the app package name (usually
-                           "com.example.your_app") and app nickname.</li>
-                        <li>Download the <strong>google-services.json</strong> file and place it in the
-                           <strong>android/app</strong> directory of your Flutter project.
-                        </li>
-                        <br>
-                        <code>Add SHA1 and SHA-256 Key in firebase:</code>
-                        <li>Open Terminal.</li>
-                        <li>flutter clean</li>
-                        <li>flutter pub get</li>
-                        <li>Go to android folder.("D:\user\project_name\android\")</li>
-                        <li>Then Run this command <strong>./gradlew signingReport</strong></li>
-                        <li>Then Copy the SHA1 and SHA-256 key and paste it to the address below</li>
-                        <li>Click on the gear icon in the upper-left corner to access project settings.</li>
-                        <li>In the Project Settings page, scroll down to the section titled "CrossFit" and find the
-                           Android app for which you want to add the keys. If you haven't added an Android app yet,
-                           click on the "Add app" button and follow the instructions to register your app.</li>
-                        <li>Once you have selected the Android app, you'll see the app's configuration details.</li>
-                        <li>Look for the section titled "SHA certificate fingerprints" and click on the "Add
-                           fingerprint" button.</li>
-                        <li>In the dialog that appears, enter the SHA-1 key in the provided field.</li>
-                        <li>also add SHA-256 keys by clicking on the "Add another fingerprint" link and entering the
-                           respective keys in the provided fields.</li>
-                        <li>Click on the "Save" button to add the keys to your Firebase project.</li>
-                        <br>
-                        <h5><strong>2.<u>For IOS</u></strong></h5>
-                        <li>In the Firebase Console, go to your project settings (the gear icon) and click on "Project settings."</li>
-                        <li>Under the "Your apps" section, click on the iOS icon to add an iOS app.</li>
-                        <li>Enter your Apple bundle ID. This can be found in your Flutter project's <strong>Info.plist</strong> file under the <strong>CFBundleName</strong> key.</li>
-                        <li>Download the <strong>GoogleService-Info.plist</strong> file and place it in the <strong>ios/Runner</strong> directory of your Flutter project.</li>
-                        <br>
-                        <code>Enable app capabilities in Xcode:</code>
-                        <li>Before your application can start to receive messages, you must enable push notifications and background modes in your Xcode project.</li>
-                        <li>Open your Xcode project workspace (ios/Runner.xcworkspace).</li>
-                        <li><a href="https://help.apple.com/xcode/mac/current/#/devdfd3d04a1" target="_blank">Enable push notifications</a></li>
-                        <li>Enable the Background fetch and the Remote notifications <a href="https://developer.apple.com/documentation/xcode/configuring-background-execution-modes" target="_blank">background execution modes</a></li>
-                        <br>
-                        <code>Upload your APNs authentication key:</code>
-                        <li>Before you use FCM, upload your APNs certificate to Firebase. If you don't already have an APNs certificate, create one in the <a href="https://developer.apple.com/membercenter/index.action" target="_blank">Apple Developer Member Center.</a></li>
-                        <li>Inside your project in the Firebase console, select the gear icon, select Project Settings, and then select the Cloud Messaging tab.</li>
-                        <li>Select the Upload Certificate button for your development certificate, your production certificate, or both. At least one is required.</li>
-                        <li>For each certificate, select the .p12 file, and provide the password, if any. Make sure the bundle ID for this certificate matches the bundle ID of your app. Select Save.</li>
-                        <br>
-                        <br>
-                     </section>
+                    
                      <section id="license_settings">
                         <h3><strong>I) <u>License Registration Settings</u></strong></h3>
 <li>If you want to register the license,visit the WPGYM website
@@ -384,7 +349,7 @@ After entering the details, click on Submit.</li>
                               </section>
 <br>
                      <section id="sign-your-release-build">
-                        <h3><strong>H) <u>Sign your release build</u></strong></h3>
+                        <h3><strong>J) <u>Sign your release build</u></strong></h3>
                         <br>
                         <p>To sign a release build for WPGYM Mobile App, you can follow these steps:
                            <br>
@@ -428,8 +393,8 @@ After entering the details, click on Submit.</li>
                         </p>
                      </section>
 
-                     <section id="church-app-pages">
-                        <h3><strong>J) <u>WPGYM Mobile App Overview</u></strong></h3>
+                     <section id="Church-app-pages">
+                        <h3><strong>K) <u>WPGYM Mobile App Overview</u></strong></h3>
                         <br>
                         <section id="fronted-login">
                            <h3><strong><u>Login Screen:</u></strong></h3>
