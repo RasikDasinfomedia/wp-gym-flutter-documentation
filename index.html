@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+   <!-- Basic Page Needs
+         ================================================== -->
+   <meta charset="utf-8">
+   <title>WPGYM Mobile App - Documentation</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Mobile Specific Metas	
+         ================================================== -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <!-- CSS
+         ================================================== -->
+   <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+   <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+   <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Roboto+Slab:300,400" rel="stylesheet"
+      type="text/css">
+   <!-- JS
+         ================================================== -->
+   <script type="text/javascript" src="js/jquery.min.js"></script>
+   <!--[if lt IE 9]>
+      <script src="js/modernizr.custom.11889.js" type="text/javascript"></script>
+      <![endif]-->
+   <!-- HTML5 Shiv events (end)-->
+   <!-- Favicons
+         ================================================== -->
+   <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body>
+   <!-- Primary Page Layout
+         ================================================== -->
+   <div id="wrap" class="colorskin-0">
+      <!-- end-header -->
+      <section class="container">
+         <div class="row">
+            <div id="header-sm">
+                  <div class="col-md-3 logo"> <a href="index.html"><img src="images/mojoomla_logo.jpg"
+                        id="img-logo" alt="logo"></a> </div>
+               <div class="col-md-8 col-md-offset-1 desc">
+                  <h4 class="slight">WPGYM Mobile App/h4>
+                  <h5 class="slight"><small>Documented by Mojoomla - at November 2024</small></h5>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <aside id="side-nav">
+                   <div class="logo">&nbsp;&nbsp; <img src="images/mojoomla_logo.png" id="img-logo" alt="mojoomla" style="margin-bottom:20px; height="80" width="230"> </div>
+                  <ul id="top-menu">
+                     <li><a href="#introduction">Introduction</a></li>
+                     <li><a href="#setting-up-android-project">setting up flutter Project</a></li>
+                     <li><a href="#flutter-version">Flutter Version</a></li>
+                     <li><a href="#change-application-name">Change Application Name</a></li>
+                     <li><a href="#changing-package-name">Changing Package name</a></li>
+                     <li><a href="#change-base-url">Change Base URL</a></li>
+                     <li><a href="#Android-Customization">Flutter Customization</a></li>
+                     <li><a href="#firebase-notifications">Firebase Notifications</a></li>
+                     <li><a href="#license_settings">License Registration Settings</a></li>
+                     <li><a href="#sign-your-release-build">Create Release Build</a></li>
+                     <li>
+                        <a href="#Church-app-pages">WPGYM App Overview</a>
+                        <ul>
+                           <li><a href="#fronted-login">Login Screen</a></li>
+                           <li><a href="#different-role">different Role</a>
+                              <ul>
+                                 <li><a href="#Member-detaiils">Member Role Screen</a></li>
+                                 <li><a href="#Family-Member-detaiils">Trainer Role Screen</a></li>
+                                 <li><a href="#Accountant-detaiils">Accountant Role Screen</a></li>
+                              </ul>
+                           </li>
+                           <li><a href="#dashboard-view">Dashboard Screen</a></li>
+                           <li><a href="#Profile-detaiils">Profile Details Screen</a></li>
+
+                        </ul>
+                     </li>
+                  </ul>
+               </aside>
+            </div>
+          <div class="col-md-8">
+   <section id="Introduction">
+                  <div id="header" class="row">
+                     <div class="col-md-3 logo"> <a href="index.html"><img src="images\wpgym.png"
+                             id="img-logo" alt="logo"></a> </div>
+                     <div class="col-md-8 col-md-offset-1 desc">
+                    <h4 class="slight">WPGYM Mobile App<sub><small></small></sub></h4>
+                       <h5 class="slight"><small>Documented by Mojoomla - at <span id="current-date"></span></small></h5>
+<script>
+    // JavaScript to dynamically set the current date
+    const dateElement = document.getElementById('current-date');
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.innerText = new Date().toLocaleDateString('en-US', options);
+</script>
+                     </div>
+                  </div>
+                  <hr class="vertical-space2">
+                  <p align="center"><img src="images/preview.jpg" width='100%'></p>
+                  <section id="introduction">
+                     <h3><strong>A) <u>Introduction</u> </strong></h3>
+                     <p align="justify">The WP Gym Mobile App is an ideal solution for managing the complete gym operation. It supports various user roles, including Member,Trainer, and Accountant
+                        <span style="color: blue;">                 </section>
+                  <section id="setting-up-android-project">
+                     <hr class="vertical-space2">
+                     <h3><strong>B) <u>Setting up flutter project</u></strong></h3>
+                     <br>
+                     <h5><strong>1. <u>Requirement</u></strong></h5>
+                     <ol>
+                        <li>Latest <a href="http://developer.android.com/sdk/index.html" target="_blank">Android
+                              Studio</a></li>
+                        <li>Windows XP (32-bit), Vista (32- or 64-bit), or Windows 7 And up (32- or 64-bit) </li>
+                        <li>Mac OS X 10.5.8 or later (x86 only)</li>
+                        <li>Linux (tested on Ubuntu Linux, Lucid Lynx) </li>
+                        <li>GNU C Library (glibc) 2.7 or later is required. </li>
+                        <li>On Ubuntu Linux, version 8.04 or later is required.64-bit distributions must be capable of
+                           running 32-bit applications. </li>
+                        <li>4 GB RAM minimum, 8 GB RAM recommended.</li>
+                        <li>Free Disk At least 1 GB for Android SDK, emulator system images, and caches.</li>
+                        <li>Oracle® Java Development Kit (JDK) 8 and up.</li>
+                     </ol>
+                     <h5><strong>2. <u>Installing the latest version of Android Studio.</u></strong></h5>
+                     <code>WPGYM Mobile App is built with the latest Android studio <strong>Koala | 2024.1.2</strong></br><strong> NOTE:</strong> There are several other tools to build and run android projects.</code>
+                     <ol>
+                        <li> Go to the <a href="http://developer.android.com/sdk/index.html" target="_blank"> Android
+                              Developer Page</a> </li>
+                        <li> Download the Android Studio. This should contain the latest version of Android Studio </li>
+                        <li> Install Android studio. more information Go to <a
+                              href="https://developer.android.com/studio/install.html" target="_blank">install Android
+                              studio</a></li>
+                        <!-- <li> Run Eclipse.exe </li> -->
+                     </ol>
+                     <h5><strong>3. <u>Update the IDE and SDK Tools</u></strong></h5>
+                     <ol>
+                        <li>The Flutter SDK Manager provides the SDK tools, platforms, and other components you need to
+                           develop your apps.</li>
+                        <li>WPGYM Mobile App minimum required SDK Platform API level <Strong>21</strong></li>
+                        <li>Install SDK Platform API levels.</li>
+                        <li>Open the Preferences window by clicking File -> Settings.</li>
+                        <li>In the left panel, click Appearance & Behavior -> System Settings -> Android SDK.</li>
+                        <li>Select required SDK platforms</li>
+                        <li> Click ok.</li>
+                     </ol>
+                     <br>
+                  </section>
+                  <section id="flutter-version">
+                     <h3><strong>C) <u>Flutter Version</u></strong></h3>
+                     <p>environment: </br>
+                        sdk: '3.24.3' </p>
+                  </section>
+                  <section id="change-application-name">
+                     <h3><strong>D) <u>Change Application name</u></strong></h3>
+                     <p>Change the application name To change the name of a Flutter app, you need to modify the
+                        appropriate files and configurations. Here's a step-by-step guide to help you change the app
+                        name:
+                     </p>
+                     <ol>
+                        <li>Open the Flutter project in your preferred integrated development environment (IDE) or code
+                           editor.</li>
+                        <li>Locate the <strong>pubspec.yaml</strong> file in the root directory of your Flutter project.
+                        </li>
+                        <li>Open the <strong>pubspec.yaml</strong> file and find the <strong>name </strong> field. By
+                           default, it should be something like <strong>name: your_app_name</strong>.</li>
+                        <li>Change the value of the <strong>name </strong> field to your desired app name. Make sure to
+                           follow the naming conventions for Flutter projects (lowercase letters, underscores instead of
+                           spaces, etc.). For example, you can change it to <strong>name: my_flutter_app</strong>.</li>
+                        <li>Save the <strong>pubspec.yaml</strong> file.</li>
+                        <li>Open the <strong>android</strong> directory in your Flutter project.</li>
+                        <li>Locate the <strong>app</strong> directory inside the <strong>android</strong> directory and
+                           open it.</li>
+                        <li>Inside the <strong>app</strong> directory, find the <strong>build.gradle</strong> file
+                           (usually located at <strong>android/app/build.gradle</strong>).</li>
+                        <li>Open the <strong>build.gradle</strong> file and locate the <strong>defaultConfig</strong>
+                           section.</li>
+                        <li>In the <strong>defaultConfig</strong> section, find the <strong>applicationId<strong> field.
+                                 The value of this field represents the unique identifier of your app.</li>
+                        <li>Change the value of the <strong>applicationId<strong> field to match your desired app
+                                 package name. The package name should typically follow the reverse domain name
+                                 notation. For example, if your domain is <strong>example.com</strong>, you can use
+                                 <strong>applicationId: com.example.myflutterapp</strong>.</li>
+                        <li>Save the <strong>build.gradle</strong> file.</li>
+                        <li>Now, you need to update the app name in the iOS configuration.</li>
+                        <li>Open the <strong>ios</strong> directory in your Flutter project.</li>
+                        <li>Inside the <strong>ios</strong> directory, find the <strong>Runner</strong> directory and
+                           open it.</li>
+                        <li>Locate the <strong>Info.plist</strong> file (usually located at
+                           <strong>ios/Runner/Info.plist</strong>).
+                        </li>
+                        <li>
+                           Open the <strong>Info.plist<strong> file and find the
+                                 <strong>
+                                    <key>CFBundleName</key>
+                                 </strong>
+                                 section.
+                        </li>
+                        <li>
+                           Change the value of the
+                           <strong>
+                              <string>
+                           </strong>
+                           tag below
+                           <strong>
+                              <key>CFBundleName</key>
+                           </strong>
+                           to your desired app name. For example,
+                           <strong>
+                              <string>My Flutter App</string>
+                           </strong>
+                           .
+                        </li>
+                        <li>Save the <strong>Info.plist</strong> file.</li>
+                     </ol>
+                     <p><strong>Note :</strong>After following these steps, the name of your Flutter app should be
+                        updated. Remember to clean and rebuild your project to ensure the changes take effect.</p>
+                  </section>
+                  <section id="changing-package-name">
+                     <h3><strong>E) <u>Changing Package name</u></strong></h3>
+                     <p>To change the package name of a Flutter application, you need to update it in several places
+                        within your project. Follow these steps to change the package name:</p>
+                     <ol>
+                        <li>Rename the package folder: Open the root directory of your Flutter project and navigate to
+                           the lib folder. Rename the package folder to the desired new package name.</li>
+                        <li>Update the package name in the pubspec.yaml file: Open the pubspec.yaml file located in the
+                           root directory of your project. Update the name field with the new package name.</li>
+                        <li>Update the Android package name:</li>
+                        <ul>
+                           <li>• Open the AndroidManifest.xml file located at android/app/src/main/AndroidManifest.xml.
+                           <li>
+                           <li>
+                              • Change the package attribute of the
+                              <manifest>
+                                 tag to the new package name.
+                           </li>
+                        </ul>
+                        <li>Update the iOS bundle identifier:</li>
+                        <ul>
+                           <li>• Open the Info.plist file located at ios/Runner/Info.plist.
+                           <li>
+                           <li>• Change the value of the CFBundleIdentifier key to the new package name.</li>
+                        </ul>
+                        <li>Update import statements and references:</li>
+                        <ul>
+                           <li>• In your Dart code files, update any import statements that reference the old package
+                              name to import the new package name.
+                           <li>
+                           <li>• Replace any references to the old package name within your code with the new package
+                              name.</li>
+                        </ul>
+                        <li>Clean and rebuild the project: Run the following command in the root directory of your
+                           project to clean and rebuild your Flutter project:</li>
+                        <ul>
+                           <li>• flutter clean
+                           <li>
+                           <li>• flutter pub get</li>
+                           <li>• flutter run</li>
+                        </ul>
+                     </ol>
+                     <p>After following these steps, your Flutter application should have the updated package name
+                        throughout the project. Make sure to update any dependencies or configurations that reference
+                        the old package name as well.</p>
+                     <section id="change-base-url">
+                        <h3><strong>F) <u>Change Base URL</u></strong></h3>
+                        <p><br>Change the URL, you need to modify the appropriate files and configurations. Here's a
+                           step-by-step guide to help you change the URL:
+                        </p>
+                        <ol>
+                           <li>Open the Flutter project in your preferred integrated development environment (IDE) or
+                              code editor.</li>
+                           <li>Locate the <strong>lib</strong> folder in the root directory of your Flutter project.
+                           </li>
+                           <li>Open the <strong>Util</strong> folder and find the <strong>StaticData.dart </strong>
+                              File. By default, it should be something like <strong>apiBaseUrl:
+                                 "https://www.google.com/"</strong>.</li>
+                           <li>Change the value of the <strong>apiBaseUrl </strong> field to your desired URL. Make sure
+                              to follow the naming conventions for Flutter projects (lowercase letters, underscores
+                              instead of spaces, etc.). For example, you can change it to <strong>apiBaseUrl: "Your Web
+                                 URL"/</strong>.</li>
+                           <li>Save the <strong>StaticData.dart</strong> file.</li>
+                        </ol>
+                        <p><strong>Note :</strong>After following these steps, the name of your Flutter app should be
+                           updated. Remember to clean and rebuild your project to ensure the changes take effect.</p>
+                     </section>
+                     <br>
+                     <section id="Android-Customization">
+                        <h3><strong>G) <u>Flutter Customization</u></strong></h3>
+
+                        <h5><strong>1.<u>Change Launcher icon</u></strong></h5>
+                        <p>Change the launcher icon in
+                           <code>Replace the default app icons:<br>
+                        <strong> -> </strong>For Android, navigate to the <strong>android/app/src/main/res</strong> directory in your Flutter project. Replace the icons in the mipmap directories with your custom icons, following the size-specific folders (e.g., mipmap-mdpi, mipmap-hdpi, etc.).<br>
+                        <strong> -> </strong>For iOS, navigate to the <strong> ios/Runner/Assets.xcassets/AppIcon</strong> appiconset directory in your Flutter project. Replace the default icons with your custom icons. Make sure to match the size and format requirements for each icon.</code>
+                        </p>
+                        <img src="images/change-logo.png" id="change-img-logo">
+                        <p><strong>Note:</strong> You need the 512x512 px size for publishing to Google Play.</p>
+                     </section>
+      
+                     <h5><strong>2. <u> Run Application on Emulator</u></strong></h5>
+                     <code>Create an AVD Definition as follows:</code>
+                     <ol>
+                        <li>Launch the Android Virtual Device Manager by selecting Tools -> Android -> AVD Manage or by
+                           clicking the AVD Manager icon in the toolbar</li>
+                        <li>In the Your Virtual Devices screen, click Create Virtual Device.</li>
+                        <li>In the Select Hardware screen, select a phone device, such as Nexus 6, and then click Next.
+                        </li>
+                        <li>In the System Image screen, choose the desired system image for the AVD and click Next.</li>
+                        <code> If you don't have a particular system image installed, you can get it by clicking the download link.</code>
+                        <li>Verify the configuration settings (for your first AVD, leave all the settings as they are),
+                           and then click Finish.</li>
+                        <code>For more information about using AVDs <a href = "https://developer.android.com/studio/run/managing-avds.html" target="_blank"> Create and Manage Virtual Devices.</a></code>
+                     </ol>
+                     <code>Run the app from Android Studio as follows:</code>
+                     <ol>
+                        <li>In Android Studio, select your project and click Run from the toolbar.</li>
+                        <li>In the Select Deployment Target window, select your emulator and click OK.</li>
+                     </ol>
+                     <code>It can take a few minutes for the emulator to start. You may have to unlock the screen. When you do, My First App appears on the emulator screen.</code>
+                     </br>
+                     <br>
+                     <section id="firebase-notifications">
+                        <h3><strong>H) <u>Firebase Notifications</u></strong></h3>
+                        <br>
+                        <h5><strong>1.<u>For Android</u></strong></h5>
+                        <li>In the Firebase console, go to your project.</li>
+                        <li>Click on the "Add app" button to add your Flutter app.</li>
+                        <li>Follow the instructions to register your app, providing the app package name (usually
+                           "com.example.your_app") and app nickname.</li>
+                        <li>Download the <strong>google-services.json</strong> file and place it in the
+                           <strong>android/app</strong> directory of your Flutter project.
+                        </li>
+                        <br>
+                        <code>Add SHA1 and SHA-256 Key in firebase:</code>
+                        <li>Open Terminal.</li>
+                        <li>flutter clean</li>
+                        <li>flutter pub get</li>
+                        <li>Go to android folder.("D:\user\project_name\android\")</li>
+                        <li>Then Run this command <strong>./gradlew signingReport</strong></li>
+                        <li>Then Copy the SHA1 and SHA-256 key and paste it to the address below</li>
+                        <li>Click on the gear icon in the upper-left corner to access project settings.</li>
+                        <li>In the Project Settings page, scroll down to the section titled "CrossFit" and find the
+                           Android app for which you want to add the keys. If you haven't added an Android app yet,
+                           click on the "Add app" button and follow the instructions to register your app.</li>
+                        <li>Once you have selected the Android app, you'll see the app's configuration details.</li>
+                        <li>Look for the section titled "SHA certificate fingerprints" and click on the "Add
+                           fingerprint" button.</li>
+                        <li>In the dialog that appears, enter the SHA-1 key in the provided field.</li>
+                        <li>also add SHA-256 keys by clicking on the "Add another fingerprint" link and entering the
+                           respective keys in the provided fields.</li>
+                        <li>Click on the "Save" button to add the keys to your Firebase project.</li>
+                        <br>
+                        <h5><strong>2.<u>For IOS</u></strong></h5>
+                        <li>In the Firebase Console, go to your project settings (the gear icon) and click on "Project settings."</li>
+                        <li>Under the "Your apps" section, click on the iOS icon to add an iOS app.</li>
+                        <li>Enter your Apple bundle ID. This can be found in your Flutter project's <strong>Info.plist</strong> file under the <strong>CFBundleName</strong> key.</li>
+                        <li>Download the <strong>GoogleService-Info.plist</strong> file and place it in the <strong>ios/Runner</strong> directory of your Flutter project.</li>
+                        <br>
+                        <code>Enable app capabilities in Xcode:</code>
+                        <li>Before your application can start to receive messages, you must enable push notifications and background modes in your Xcode project.</li>
+                        <li>Open your Xcode project workspace (ios/Runner.xcworkspace).</li>
+                        <li><a href="https://help.apple.com/xcode/mac/current/#/devdfd3d04a1" target="_blank">Enable push notifications</a></li>
+                        <li>Enable the Background fetch and the Remote notifications <a href="https://developer.apple.com/documentation/xcode/configuring-background-execution-modes" target="_blank">background execution modes</a></li>
+                        <br>
+                        <code>Upload your APNs authentication key:</code>
+                        <li>Before you use FCM, upload your APNs certificate to Firebase. If you don't already have an APNs certificate, create one in the <a href="https://developer.apple.com/membercenter/index.action" target="_blank">Apple Developer Member Center.</a></li>
+                        <li>Inside your project in the Firebase console, select the gear icon, select Project Settings, and then select the Cloud Messaging tab.</li>
+                        <li>Select the Upload Certificate button for your development certificate, your production certificate, or both. At least one is required.</li>
+                        <li>For each certificate, select the .p12 file, and provide the password, if any. Make sure the bundle ID for this certificate matches the bundle ID of your app. Select Save.</li>
+                        <br>
+                        <br>
+                     </section>
+                     <section id="license_settings">
+                        <h3><strong>I) <u>License Registration Settings</u></strong></h3>
+<li>If you want to register the license,visit the WPGYM website
+    and log in as an admin.
+</li>
+<li>Go to System Settings >> General Settings and click on the Mobile App Settings tab.</li>
+<li>In the License Verification section, fill in the required details, including the License Key and Email.
+After entering the details, click on Submit.</li>
+<br>
+ <img alt="" src="images/license_verification.png" width="100%">
+<br>
+<li>Once successful, a confirmation message will be displayed:
+"Mobile App License Verification completed successfully."</li><br>
+ <img alt="" src="images/verification_successfully.png" width="100%" >
+                              </section>
+<br>
+                     <section id="sign-your-release-build">
+                        <h3><strong>H) <u>Sign your release build</u></strong></h3>
+                        <br>
+                        <p>To sign a release build for WPGYM Mobile App, you can follow these steps:
+                           <br>
+                           <strong>Step 1: Generate a keystore file</strong>
+                           <li>Right-click on the "android" directory and select "Flutter" -> "Open Android module in
+                              Android Studio"</li>
+                           <li>In the Generate Signed Bundle or APK dialog, select Android App Bundle or APK and click
+                              Next.</li>
+                           <li>Below the field for Key store path, click Create new.</li>
+                           <li>On the New Key Store window, provide the following information for your keystore and key,
+                              as shown in figure 2.<br>
+                              <img alt="" src="images/key-store.png" height="400" width="400">
+                           </li>
+                        <p>• Keystore
+                           <li><strong>Key store path:</strong> Select the location where your keystore should be
+                              created. Also, a file name should be added to the end of the location path with the .jks
+                              extension.</li>
+                        </p>
+                        <li><strong>Password:</strong> Create and confirm a secure password for your keystore.</li>
+                        </p>
+                        <p>• Key
+                           <li><strong>Alias:</strong> Enter an identifying name for your key.</li>
+                           <li><strong>Password:</strong> Create and confirm a secure password for your key. This should
+                              be the same as your keystore password.</li>
+                           <li><strong>Validity (yeas):</strong> Set the length of time in years that your key will be
+                              valid. Your key should be valid for at least 25 years, so you can sign app updates with
+                              the same key through the lifespan of your app.</li>
+                           <li>Certificate: Enter some information about yourself for your certificate. This information
+                              is not displayed in your app, but is included in your certificate as part of the APK.</li>
+                        </p>
+                        <li>Once you complete the form, click <strong>OK</strong>.</li>
+                        <img alt="" src="images/built.PNG" height="500" width="800"></li>
+                        <li>Now Replace <strong>dasinfomedia app.jks</strong> File and Open
+                           <strong>key.properties</strong> File And Change your <strong>.jks</strong> file Detail
+                        </li>
+                        <li>Now you can follow these steps and Generate Your Release Apk</li>
+                        <img alt="" src="images\apk.png" height="200" width="500"></li>
+                        <p>Click on "Build" → then click on "Flutter" → and finally click on "Build APK".
+                           <strong>wpgymflutter\build\app\outputs\apk\release</strong>This space will appear after the
+                           build is complete.
+                        </p>
+                     </section>
+
+                     <section id="church-app-pages">
+                        <h3><strong>J) <u>WPGYM Mobile App Overview</u></strong></h3>
+                        <br>
+                        <section id="fronted-login">
+                           <h3><strong><u>Login Screen:</u></strong></h3>
+                           <p> You will see this login screen.You can now login.</p>
+                       
+                           <img alt="" src="images\wp_login_img.jpg" height="550" width="300">
+                           </ol>
+                        </section>
+<br>
+                        <section id="different-role">
+                    
+                           <h3><strong>* <u>Different Role</u></strong></h3>
+                           <p> In Drawer different role vise access many items as per your role.you can work with this
+                              following three type of role .</p>
+                           <li>Member</li>
+                           <li>Trainer</li>
+                           <li>Accountant</li>
+                           <br>
+                           <section id="Member-detaiils">
+                              <h3><strong><u>Member Role menu Screen</u></strong></h3>
+                              <p> In the Member Role menu screen, we have used the Drawer.</p>
+                              <p>The drawer contains a list of menu items. It will display as many menu items as the member user can access. The list of items includes Dashboard, Calendar, User Management, Membership Plan, Workout, My Nutrition, Class Schedule, Virtual Class, Attendance, Fitness Calculator, and Payment</p>
+                              <li>Click on particular item and redirect on that Page</li>
+<br>
+                              <img alt="" src="images\member_sidemenu.jpg" height="550" width="300">
+                           </section>
+<br>
+                           <section id="Family-Member-detaiils">
+                              <h3><strong><u>Trainer Role menu Screen</u></strong></h3>
+                              <p> In the Trainer Role menu screen we have used the Drawer.</p>
+                              <p>The drawer contains a list of menu items. The drawer will display as many menu items as
+                                 are accessible to the family member user. The list of items includes Dashboard, Calender, User Management,
+                                 Membership plan, Workout, Nutrition Schedule, Class Schedule,Virtual class,Attendance,Fitness Calculator, and Payment..</p>
+                              <li>Click on particular item and redirect on that Page</li>
+<br>
+                              <img alt="" src="images\trainer.jpg" height="550" width="300">
+                           </section>
+                           <section id="Accountant-detaiils">
+<br>
+                              <h3><strong><u>Accountant Role menu Screen</u></strong></h3>
+                              <p> In the Accountant Role menu screen we have used the Drawer.</p>
+                              <p>The drawer contains a list of menu items. It will display as many menu items as are
+                                 accessible to an accountant user. The list of items includes Dashboard,User Management,Membership plan, Workout, Nutrition Schedule, Class Schedule, Virtual class ,Attendance,Fitness Calculator,Payment and store</p>
+                              <li>Click on particular item and redirect on that Page</li>
+<br>
+                              <img alt="" src="images\accountant.jpg" height="550" width="300">
+
+                           </section>
+<br>
+                        </section>
+
+                        <section id="dashboard-view">
+                           <h3><strong><u>Dashboard Screen</u></strong></h3>
+                           <p> In the dashboard screen we have use the Webview.</p>
+                           <p> Integrating a web view into Flutter dashboard can greatly enhance the functionality and
+                              user experience of your app, allowing you to seamlessly integrate web-based content
+                              alongside native features.</p>
+                           <li>Customize the WebView settings according to your requirements.</li>
+                           <li>Replace Api Base Url with the URL you want to load.</li>
+<br>
+<img alt="" src="images\maindashboard.jpg" height="550" width="300" style="margin-right: 30px;">
+<img alt="" src="images\mainpage.jpg" height="550" width="300">
+
+
+                        </section>
+          <br>          <br>
+                        <section id="Profile-detaiils">
+
+                   <h3><strong><u> Profile Details Screen</u></strong></h3>
+                           <strong> Profile Information:</strong>
+                           <li><strong>General: </strong>It contains user information, their contact information,
+                              email ID, first name ,last name , phone,Home Town Address and City.</li>
+<br>
+                           <img alt="" src="images\myprofile.jpg" height="550" width="300">
+                        </section>
+                        <!-- start-footer-->
+                        <div id="footer"> © 2024 Mojoomla All Rights Reserved. </div>
+                        <!-- end-footer -->
+                     </section>
+            </div>
+            <!-- end-side-content -->
+         </div>
+         <!-- start-footer-->
+         <div id="footer-sm"> © 2024 Mojoomla All Rights Reserved. </div>
+         <!-- end-footer -->
+         <div class="white-space"></div>
+      </section>
+      <!-- container -->
+      <!-- end-footer -->
+      <span id="scroll-top"><a class="scrollup"></a></span>
+   </div>
+   <!-- end-wrap -->
+   <!-- End Document
+         ================================================== -->
+   <script src="js/jquery.jcarousel.min.js"></script>
+   <script type="text/javascript" src="js/doubletaptogo.js"></script>
+   <script type="text/javascript" src="js/cube-custom.js"></script>
+</body>
+
+</html>
